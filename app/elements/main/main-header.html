@@ -1,0 +1,34 @@
+
+<dom-module id="main-header">
+	<style>
+		.header {
+			@apply(--layout-horizontal);
+		}
+	</style>
+	<template>
+		<div class="header">
+			<paper-tabs selected="0" noink>
+				<paper-tab>DAILY</paper-tab>
+				<paper-tab>WEEKLY</paper-tab>
+				<paper-tab>MONTHLY</paper-tab>
+				<paper-tab>TRENDING</paper-tab>
+			</paper-tabs>
+
+			<!-- Navigator -->
+			<div class="navigator">
+				<div class="leftBtn navBtn"></div>
+				<div class="navDesc">Oct 25, 2015 8:23:50 PM</div>
+				<div class="rightBtn navBtn"></div>
+			</div>
+		</div>
+	</template>
+</dom-module>
+<script>
+	Polymer({
+		is: "main-header",
+
+		properties: {
+
+		}
+	});
+</script>

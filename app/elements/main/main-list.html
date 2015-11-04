@@ -79,6 +79,10 @@
 			display: inline-block;
 		}
 
+		.mainViewContainer .chartItem .menuBtns {
+			float: right;
+		}
+
 		.mainViewContainer .chartItem .playBtn {
 			float: right;
 			width: 21px;
@@ -106,14 +110,8 @@
 		}
 	</style>
 	<template>
-		<div class="mainViewContainer">
-			<paper-tabs selected="0" noink>
-				<paper-tab>DAILY</paper-tab>
-				<paper-tab>WEEKLY</paper-tab>
-				<paper-tab>MONTHLY</paper-tab>
-				<paper-tab>TRENDING</paper-tab>
-			</paper-tabs>
-
+		<div class="mainViewContainer">								
+			
 			<div class="mainChartContainer">
 		      <template is="dom-repeat" items="{{items}}">
 		        <div class="chartItem">
@@ -133,24 +131,34 @@
 							<div class="company item">Loen Entertainment</div>
 						</div>
 					</div>
-					<div class="youtube playBtn"></div>
-					<div class="itunes playBtn"></div>
-					<div class="miniChart"></div>
+
+					<div class="menuBtns" hidden$="{{menudisable}}">
+						<div class="youtube playBtn" on-tap="showYoutubeDlog"></div>
+						<div class="itunes playBtn"></div>
+						<div class="miniChart"></div>
+					</div>
 				</div>
 		      </template>
 		    </div>
 		</div>
-	</template>
+
+		<youtube-dialog id="youtubeDlog"></youtube-dialog> 
+	</template>	
 </dom-module>
 <script>
 	Polymer({
 		is: "main-list",
 
 		properties: {
-          items: {
-            type: Array,
-            notify: true,
-          }
+			menudisable: {
+				type: Boolean,
+				notify: true
+			},
+
+	        items: {
+	          type: Array,
+	          notify: true,
+	        }
         },
 
         ready: function() {
@@ -162,6 +170,14 @@
             'Routing with Page.js',
             'Offline support with the Platinum Service Worker Elements'
           ];
+        },
+
+        showYoutubeDlog: function() {
+        	this.$.youtubeDlog.open();
+        },
+
+        hideYoutubeDlog: function() {
+        	this.$.youtubeDlog.close();
         }
 	});
 </script>

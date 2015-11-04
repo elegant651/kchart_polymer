@@ -1,0 +1,28 @@
+
+<dom-module id="main-multilist">
+	<style>
+		.panel {
+			@apply(--layout-horizontal);
+		}
+	</style>
+	<template>
+		<div class="panel">
+			<main-list menudisable></main-list>
+			<main-list menudisable></main-list>
+			<main-list menudisable></main-list>
+		</div>
+	</template>
+</dom-module>
+<script>
+	Polymer({
+		is: "main-multilist",
+
+		properties: {
+
+		},
+
+		ready: function(){
+
+		}
+	});
+</script>
