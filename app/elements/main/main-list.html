@@ -1,6 +1,7 @@
 
 <dom-module id="main-list">
-	<style>
+	<style>		
+
 		.mainViewContainer .mainChartContainer {
 			margin-top: 15px;
 		}
@@ -46,22 +47,24 @@
 			display: inline-block;
 			width: 65px;
 			height: 65px;
-			background-color: gray;
+			/*background-color: gray;			*/
 		}
 
 		.mainViewContainer .chartItem .info {
 			vertical-align: top;
 			display: inline-block;
 			margin-top: 23px;
+			@apply(--layout-flex);
 		}
 
 		.mainViewContainer .chartItem .info .title {
-			cursor: pointer;
+			cursor: pointer;			
 			font-size: 20px;
 		}
 
 		.mainViewContainer .chartItem .info .desc {
-			color: #ababab;
+			color: #ababab;			
+			display: inline-block;
 		}
 
 		.mainViewContainer .chartItem .info .desc .item {
@@ -109,10 +112,10 @@
 			background-image: url(../../images/main/icon_Youtube_focused.png);
 		}
 	</style>
-	<template>
+	<template>		
 		<div class="mainViewContainer">								
 			
-			<div class="mainChartContainer">
+			<div class="mainChartContainer">				
 		      <template is="dom-repeat" items="{{items}}">
 		        <div class="chartItem">
 					<div class="rankContainer">
@@ -120,7 +123,7 @@
 						<div class="icon"></div>
 						<div class="changed">2</div>
 					</div>
-					<div class="albumPicture"></div>
+					<iron-image class="albumPicture" src="../../images/main/Album-01.png"></iron-image>
 					<div class="info">
 						<div class="title">Not Spring, Love or Cherry Blossoms</div>
 						<div class="desc">
@@ -132,7 +135,7 @@
 						</div>
 					</div>
 
-					<div class="menuBtns" hidden$="{{isForMulti}}">
+					<div class="menuBtns" hidden$="{{isformulti}}">
 						<div class="youtube playBtn" on-tap="showYoutubeDlog"></div>
 						<div class="itunes playBtn"></div>
 						<div class="miniChart"></div>
@@ -150,7 +153,7 @@
 		is: "main-list",
 
 		properties: {
-			isForMulti: {
+			isformulti: {
 				type: Boolean,
 				notify: true
 			},			

@@ -3,13 +3,19 @@
 	<style>
 		.panel {
 			@apply(--layout-horizontal);
+			@apply(--layout-wrap);
+			width: 100%;
+		}
+
+		main-list {
+			display: inline-block;
 		}
 	</style>
 	<template>
 		<div class="panel">
-			<main-list isForMulti></main-list>
-			<main-list isForMulti></main-list>
-			<main-list isForMulti></main-list>
+			<main-list isformulti></main-list>
+			<main-list isformulti></main-list>
+			<main-list isformulti></main-list>
 		</div>
 	</template>
 </dom-module>

@@ -12,3 +12,12 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
+
+#mainToolBar {        
+	height: 60px;
+	font-size: 16px;          
+}
+
+#mainToolbar div {
+	margin-left: 30px;
+}
