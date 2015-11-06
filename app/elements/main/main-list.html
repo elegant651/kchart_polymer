@@ -132,7 +132,7 @@
 						</div>
 					</div>
 
-					<div class="menuBtns" hidden$="{{menudisable}}">
+					<div class="menuBtns" hidden$="{{isForMulti}}">
 						<div class="youtube playBtn" on-tap="showYoutubeDlog"></div>
 						<div class="itunes playBtn"></div>
 						<div class="miniChart"></div>
@@ -150,10 +150,10 @@
 		is: "main-list",
 
 		properties: {
-			menudisable: {
+			isForMulti: {
 				type: Boolean,
 				notify: true
-			},
+			},			
 
 	        items: {
 	          type: Array,
