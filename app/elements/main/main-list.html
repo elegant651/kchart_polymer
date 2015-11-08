@@ -113,6 +113,23 @@
 		}
 	</style>
 	<template>		
+		<template is="dom-bind">
+			<iron-ajax
+				auto
+				url="http://kpoptv.co:3000/api/rank/melon/monthly"
+				handle-as="json"
+				last-response="{{data}}"
+				debounce-duration="300"></iron-ajax>
+			<iron-list items="[[data]]" as="item">
+				<template>
+					<div>
+						rank: <span>[[item.rank]]</span>
+					</div>
+				</template>
+			</iron-list>	
+		</template>
+
+
 		<div class="mainViewContainer">								
 			
 			<div class="mainChartContainer">				
