@@ -4,16 +4,39 @@
 		.header {
 			@apply(--layout-horizontal);
 			@apply(--layout-center-justified);
+			height: 55px;
+  			box-shadow: 0px 10px 50px #eee;
 		}
 
 		paper-tabs {
 			--paper-tabs-selection-bar-color: #5e35b1;
+			padding-left: 15px;
 		}
+
 
 		.navigator {
 			@apply(--layout-horizontal);
 			margin: 10px;
+			font-size: 15px;
+			color: #9d9b9e;
 		}
+
+		.navDesc {
+		  position: relative;
+		  display: inline-block;
+		  top: -1px;
+		  margin-top: 7px;
+		  margin-left: 10px;
+		}
+
+		.navBtn {
+		  cursor: pointer;
+		  display: inline-block;
+		  width: 24px;
+		  height: 28px;
+		  margin-left: 10px;
+		}
+
 	</style>
 	<template>
 		<div class="header">
@@ -26,9 +49,9 @@
 
 			<!-- Navigator -->
 			<div class="navigator">
-				<iron-icon class="leftBtn" icon="icons:chevron-left"></iron-icon>				
+				<iron-icon class="leftBtn navBtn" icon="icons:chevron-left"></iron-icon>				
 				<div class="navDesc">Oct 25, 2015 8:23:50 PM</div>
-				<iron-icon class="rightBtn" icon="icons:chevron-right"></iron-icon>				
+				<iron-icon class="rightBtn navBtn" icon="icons:chevron-right"></iron-icon>				
 			</div>
 		</div>
 	</template>
