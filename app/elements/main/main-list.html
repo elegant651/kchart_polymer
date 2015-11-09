@@ -1,6 +1,22 @@
 
 <dom-module id="main-list">
-	<style>		
+	<style>				
+
+		#listTmp {
+			/*@apply(--layout-fit);*/
+        	/*@apply(--layout-vertical);*/
+        	height: 500px;
+		}
+
+		iron-list .item {
+	      @apply(--layout-horizontal);
+	      margin: 16px 16px 0 16px;
+	      padding: 20px;
+	      border-radius: 8px;
+	      background-color: white;
+	      border: 1px solid #ddd;
+	    }
+
 
 		.mainViewContainer .mainChartContainer {
 			margin-top: 15px;
@@ -117,23 +133,23 @@
 			background-image: url(../../images/main/icon_Youtube_focused.png);
 		}
 	</style>
-	<template>		
-		<template is="dom-bind">
-			<iron-ajax
-				auto
-				url="http://kpoptv.co:3000/api/rank/melon/monthly"
-				handle-as="json"
-				last-response="{{data}}"
-				debounce-duration="300"></iron-ajax>
-			<iron-list items="[[data]]" as="item">
+	<template>				
+		<iron-ajax
+			auto
+			url="http://kpoptv.co:3000/api/rank/melon/monthly"
+			handle-as="json"
+			last-response="{{data}}"				
+			debounce-duration="300"></iron-ajax>
+
+		<div id="listTmp" class="flex vertical layout">	
+			<iron-list items="[[data.rank]]" as="item">
 				<template>
-					<div>
-						rank: <span>[[item.rank]]</span>
+					<div class="item">
+						rank: <span>[[item.rank]]</span> // <span>[[item.timestp]]</span> // <span>[[item.track_id]]</span>
 					</div>
 				</template>
-			</iron-list>	
-		</template>
-
+			</iron-list>		
+		</div>
 
 		<div class="mainViewContainer">								
 			
@@ -202,5 +218,6 @@
         hideYoutubeDlog: function() {
         	this.$.youtubeDlog.close();
         }
+
 	});
 </script>
